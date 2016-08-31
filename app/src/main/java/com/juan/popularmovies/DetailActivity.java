@@ -3,7 +3,9 @@ package com.juan.popularmovies;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-public class DetailActivity extends AppCompatActivity {
+import com.juan.popularmovies.DetailFragment.OnFavoritesChangedListener;
+
+public class DetailActivity extends AppCompatActivity implements OnFavoritesChangedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,5 +20,6 @@ public class DetailActivity extends AppCompatActivity {
         }
     }
 
-
+    @Override
+    public void onFavoritesChanged() {}
 }

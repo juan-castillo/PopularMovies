@@ -21,7 +21,8 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
             Preference sortingPref = findPreference(key);
 
             // Set summary to be the user-description for the selected value
-            sortingPref.setSummary(sharedPreferences.getString(key, ""));
+            String prefString = sharedPreferences.getString(key, "");
+            sortingPref.setSummary(prefString);
         }
     }
 
