@@ -16,4 +16,12 @@
     <string name="movie_poster_size" translatable="false">w185</string>
 
     <string name="parcelable_movie_key" translatable="false">com.juan.popularmovies.Movie</string>
+
+    <string name="title_trailer_text">Trailers:</string>
+    <string name="title_reviews_text">Reviews:</string>
+
+    <string name="button_add_to_favorites_text">ADD TO FAVORITES</string>
+    <string name="button_remove_from_favorites_text">REMOVE FROM FAVORITES</string>
+
+    <string name="generic_content_description">Movie Poster</string>
 </resources>

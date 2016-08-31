@@ -1,18 +1,21 @@
-package com.juan.popularmovies;
+package com.juan.popularmovies.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/** Object used to represent a movie. Implements Parcelable to be able to pass it through Intents */
+/** Object used to represent a movie. Implements Parcelable to be able to pass it through Intents
+ *  and onSaveInstanceState*/
 public class Movie implements Parcelable {
 
+    private long id;
     private String title;
     private String posterPath;
     private String synopsis;
     private double userRating;
     private String releaseDate;
 
-    public Movie(String title, String posterPath, String synopsis, double userRating, String releaseDate) {
+    public Movie(long id, String title, String posterPath, String synopsis, double userRating, String releaseDate) {
+        this.id = id;
         this.title = title;
         this.posterPath = posterPath;
         this.synopsis = synopsis;
@@ -21,11 +24,20 @@ public class Movie implements Parcelable {
     }
 
     public Movie(Parcel in) {
+        this.id = in.readLong();
         this.title = in.readString();
         this.posterPath = in.readString();
         this.synopsis = in.readString();
         this.userRating = in.readDouble();
         this.releaseDate = in.readString();
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -75,6 +87,7 @@ public class Movie implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(id);
         dest.writeString(title);
         dest.writeString(posterPath);
         dest.writeString(synopsis);
